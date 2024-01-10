@@ -45,3 +45,17 @@ xiaoai.GetStatus() *models.Info
 xiaoai.PlayUrl(url string)
 ```
 
+## Docker
+1. Add .env on the root dir
+
+```bash
+echo "User=xx\nPwd=xxx"> .env
+```
+2. Up it
+```bash
+docker-compose -f docker-compose.yml up
+```
+3. Test it
+```bash
+curl --location 'http://127.0.0.1:8848/xiaoai/speak' \
+--form 'msg="a"'
